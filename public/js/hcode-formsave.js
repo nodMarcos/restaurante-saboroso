@@ -17,7 +17,13 @@ HTMLFormElement.prototype.save = function () {
                     response.json()
                 })
                 .then(json => {
-                    resolve(json);
+                    if(json.error) {
+
+                        reject(json);
+                    }
+                    else {
+                        resolve(json);
+                    }
 
                 })
                 .catch(err => {
