@@ -124,7 +124,7 @@ module.exports = {
     },
 
     changePassword(req) {
-        console.log(req)
+        console.log('PASSWORD: ', req.fields.password)
        
         return new Promise((resolve, reject) => {
             if (!req.fields.password) {

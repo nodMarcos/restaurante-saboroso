@@ -174,11 +174,13 @@
     }
   })
   
-  document.querySelector('#modal-update-password form').save()
-  .then(results => {
-    //window.location.reload();
+  document.querySelector('#modal-update-password form').save({
+    success: () => {
+      window.location.reload();
+    },
+    failure: err => {
+      alert(err)
+    }
   })
-  .catch(err => {
-    alert(err.error)
-  });
+  
 </script>
